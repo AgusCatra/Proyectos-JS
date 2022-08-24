@@ -1,0 +1,174 @@
+:root{
+  --negro         : #393939;
+
+  /* TipografÃ­a */
+  --tipo-principal   :Arial, Helvetica, sans-serif;
+  --tipo-secundaria  : font-family: 'Inter', sans-serif;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root{
+      --negro         : #ececec;
+  }
+}
+
+
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img , picture , video , iframe , figure{
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */ object-fit: cover;        
+  /* opcional */ object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color:inherit;
+  font-size:inherit;
+}
+/* ... excepto los que se encuentran en pÃ¡rrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1 , h2 , h3 , h4 , h5 , h6 , p ,span , a , strong , blockquote , i , b , u , em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color:inherit;
+}
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Nivelamos problemas de tipografÃ­as y colocaciÃ³n de formularios */
+form , input, textarea, select , button , label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    /* opcional */ appearance: none;
+}
+
+/* Reseteamos las tablas */
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/* Configuramos la tipografÃ­a para toda la web */
+body {
+  min-height  : 100vh;
+  font-size   : 100%;
+  font-family : var(--tipo-principal);
+  background-color: burlywood;
+  color       : var(--negro);
+  /* opcional */ hyphens: auto;
+  /* opcional */ font-smooth: always;
+  /* opcional */ -webkit-font-smoothing: antialiased;
+  /* opcional */ -moz-osx-font-smoothing: grayscale;
+}
+#app{
+  background-color: #393939;
+  width: 30%;
+  margin: 50em auto;
+  border: solid 1px #ccc;
+  border-radius: 5%;
+  padding: 5rem;
+}
+#time{
+  background-color: rgb(230, 213, 69);
+  text-align: center;
+  padding: 5em 2.3em;
+}
+#time #value{
+  background-color: white;
+  font-size: 4rem;
+  font-weight: bolder;
+}
+.form{
+  display: flex;
+  justify-content: center;
+}
+input[type="text"]{
+  background-color: yellow;
+  margin: auto;
+  /* padding: 0 60px 70px 70px; */
+  border: solid 0.5px #ccc;
+  width: 100%;
+  padding: 5%;
+}
+button,
+input[type="submit"]{
+  border:none;
+  background-color: #3366;
+  color: white;
+  margin: 1em auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#tasks{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.task{
+  background-color: rgb(230, 213, 69);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.task .completed{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.doe{
+  display: inline-block;
+  padding: 5px;
+  background-color: #ccc;
+}
